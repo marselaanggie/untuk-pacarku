@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Ulang Tahun Pacar - 4 Halaman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #808080; /* Abu-abu */
+            transition: background-color 0.5s;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav button {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease; /* Animasi smooth */
+        }
+        nav button:hover {
+            background: #777;
+            transform: translateY(-5px); /* Bergerak ke atas saat hover */
+        }
+        .page {
+            display: none;
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .active {
+            display: block;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease; /* Animasi smooth */
+        }
+        button:hover {
+            background: #45a049;
+            transform: translateY(-5px); /* Bergerak ke atas saat hover */
+        }
+        .option {
+            background: #e0e0e0;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Animasi smooth */
+        }
+        .option:hover {
+            background: #d0d0d0;
+            transform: translateY(-5px); /* Bergerak ke atas saat hover */
+        }
+        img, video {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button onclick="showPage('page1')">Page 1</button>
+        <button onclick="showPage('page2')">Page 2</button>
+        <button onclick="showPage('page3')">Page 3</button>
+        <button onclick="showPage('page4')">Page 4</button>
+    </nav>
+
+    <!-- Page 1: Cover -->
+    <div id="page1" class="page active">
+        <h1>Selamat Ulang Tahun!</h1>
+        <img src="https://via.placeholder.com/400x300?text=Upload+Foto+Cover" alt="Foto Cover" style="width: 100%;">
+        <p>Selamat ulang tahun sayang kuuu...<br>Akuuu punya sesuatuuuuuu</p>
+        <button onclick="showPage('page2')">Next</button>
+    </div>
+
+    <!-- Page 2: untuk sayang ku -->
+    <div id="page2" class="page">
+        <h1>untuk sayang ku</h1>
+        <p>Selamat ulang tahun, pacar ku yang baik, lucu, manja, BEDA 2 TAHUN dan hanya satu-satunya di dunia.<br>Akhirnyaaa yaa, officially 2 tahun jarak umurnya sama Om.<br><br>Maaf untuk kali ini kita LDR lagi. Tidak bisa peluk dan kasih kado secara langsung juga. Terlebih tidak bisa makan kue dan tiup lilin sama-sama.<br><br>Untuk tahun yang baru ini, semoga banyak "semoga" yang akan terealisasikan dengan baik (bahkan kalaupun sedikit dibawah ekspektasi, aku pastinya juga bangga untuk itu!).<br>Aku tau banyak hal yang sayang pikirkan dan hadapi sendiri. Mungkin karena tidak ingin aku ikut kelelahan dan terbebani atau mungkin karena aku sedang tidak oke untuk terlibat. Terimakasih untuk setiap pertimbangan dan usahanya sayang, aku tentu sudah dan akan selalu bangga sama sayang.<br><br>Dari banyaknya hal, terimakasih sudah menjadi alasan aku berani untuk merasakan hal-hal yang tidak biasanya aku rasakan bersama manusia lainnya. Terimakasih untuk setiap usaha, keringat dan air matanya untuk aku. Terimakasih untuk berusaha direpotkan oleh perempuan sok kuat ini. Aku selalu bersyukur untuk dipertemukan dan bersama sayang sejauh ini.<br><br>Aku harap, kita bisa tumbuh bersama. Saling peluk dan genggam ketika kata-kata bahkan tidak bisa menggambarkan lelahnya kita. Atau sekedar menurunkan ego satu sama lain.<br><br>Nanti kita makan kue dan tiup lilin di pantai yaaaa...<br>Aku tungguuuu!!!!<br><br>Love you sayang <3</p>
+        <button onclick="showPage('page3')">Next</button>
+    </div>
+
+    <!-- Page 3: 3 Opsi -->
+    <div id="page3" class="page">
+        <h1>Pilih Opsi Spesial</h1>
+        <div class="option" onclick="openSpotify()">Reedem Gift : Birthday Treat</div>
+        <div class="option" onclick="showCaption1()">Reedem Gift : Birthday Treat</div>
+        <div class="option" onclick="showCaption2()">Reedem Gift : Birthday Treat</div>
+        <div id="specialContent" style="display: none; margin-top: 20px;">
+            <p id="captionDisplay" style="font-size: 18px; font-weight: bold;"></p>
+        </div>
+        <button onclick="showPage('page4')">Next</button>
+    </div>
+
+    <!-- Page 4: Selamat ulang tahun ke 24 sayang -->
+    <div id="page4" class="page">
+        <h1>Selamat ulang tahun ke 24 sayang</h1>
+        <img src="https://via.placeholder.com/400x300?text=Upload+Foto+Final" alt="Foto Final" style="width: 100%;">
+        <p>Ayo kita realisasikan wish list kita bareng!<br>LOVEEEE YOUUUUUUUU 1000X <3<br><br>With love,<br>Adek kelas yang rajin kamu vc dulu!</p>
+    </div>
+
+    <script>
+        // Fungsi navigasi
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // Opsi di Page 3
+        function openSpotify() {
+            window.open('https://open.spotify.com/playlist/40K7EloswRQD0scUX6hzty?si=1c607087210c47bb', '_blank');
+        }
+        function showCaption1() {
+            document.getElementById('captionDisplay').innerText = "‼ VOUCHER SPECIAL ‼\nSelamat! kamu mendapatkan voucher special untuk merayakan ulang tahun mu.\nBerikut adalah ketentuan perayaan yang dapat kamu nikmati.\n\n📍 Pantai manapun di Manokwari\n🕞 Pukul 15.00 - 18.00 WIB\n🎁 FREE Kue Ulang Tahun dan ditemani oleh PACAR MU\n\nVoucher ini dapat dinikmati maksimal 40 HARI SETELAH ULANG TAHUN MU.\nMohon konfirmasi H-2 sebelum menikmati voucher ini.\n\nContact Person +62 813 4335 3582 (Pacar mu yang cantik)";
+            document.getElementById('specialContent').style.display = 'block';
+        }
+        function showCaption2() {
+            document.getElementById('captionDisplay').innerText = "‼ VOUCHER SPECIAL ‼\n\nSELAMAT! kamu berhak mendapatkan pengabulan 1 PERMINTAAN TANPA PENOLAKAN (syarat dan ketentuan berlaku).\n\nSegerakan konfirmasi untuk menukarkan voucher ini.\n\nSyarat dan ketentuan : Permintan tidak boleh merugikan pihak manapun, Permintaan masuk akal serta BUKAN permintaan PINDAH AGAMA.\n\nContact Person ‪+62 813 4335 3582‬ (Pacar mu yang cantik)";
+            document.getElementById('specialContent').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
